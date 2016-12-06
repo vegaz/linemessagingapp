@@ -1,6 +1,22 @@
 <?php
 
 $access_token = 'HQovaDzjjVf69u+Tea0aLHw481ctpJmHmibhotCwwizg47ly57r8gjcTPQpDETHLAVta/Uy1DZezHAQQgrjBFr17e1fjhmwiffD1lUhFmTfRFYo/6P8NAQOeBfBulttd9e8W0LtQir8HKYgEPEFvkQdB04t89/1O/w1cDnyilFU=';
+$chanel_secret = '7f0058cce2e68b02d58d9f909f2c27da';
+
+$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
+$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $chanel_secret]);
+
+$res = $bot->getProfile('0863333790');
+
+
+
+if ($res->isSucceeded()) {
+    $profile = $res->getJSONDecodedBody();
+	$displayname = $profile['displayName'];
+    //echo $profile['displayName'];
+    //echo $profile['pictureUrl'];
+    //echo $profile['statusMessage'];
+}
 
 $proxy = 'velodrome.usefixie.com:80';
 $proxyauth = 'fixie:VjDwel54cX5u91T';
@@ -23,7 +39,7 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => $text." via proxy"
+				'text' => $text." via proxy / ".$displayname
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
