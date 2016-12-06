@@ -18,9 +18,9 @@ $res = $bot->getProfile('0863333790');
 if ($res->isSucceeded()) {
     $profile = $res->getJSONDecodedBody();
 	$displayname = $profile['displayName'];
-    //echo $profile['displayName'];
-    //echo $profile['pictureUrl'];
-    //echo $profile['statusMessage'];
+    echo $profile['displayName'];
+    echo $profile['pictureUrl'];
+    echo $profile['statusMessage'];
 }
 
 $proxy = 'velodrome.usefixie.com:80';
