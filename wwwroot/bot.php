@@ -3,7 +3,7 @@
 $access_token = 'HQovaDzjjVf69u+Tea0aLHw481ctpJmHmibhotCwwizg47ly57r8gjcTPQpDETHLAVta/Uy1DZezHAQQgrjBFr17e1fjhmwiffD1lUhFmTfRFYo/6P8NAQOeBfBulttd9e8W0LtQir8HKYgEPEFvkQdB04t89/1O/w1cDnyilFU=';
 
 $proxy = 'velodrome.usefixie.com:80';
-$proxyauth = 'fixie:VjDwel54cX5u91Td';
+$proxyauth = 'fixie:VjDwel54cX5u91T';
 
 // Get POST body content
 $content = file_get_contents('php://input');
